@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //驼峰转化
+        var str="can-enter-volunteer-organization";
+        var x=str.split("-");
+        //document.write(x);
+        document.write(x[0]);
+        for(i=1;i<x.length;i++){
+            //document.write(x[i]);
+            document.write(x[i].charAt(0).toUpperCase());
+            document.write(x[i].substr(1));
+        }
+
+        //新增数组
+        var arr=['myfristactivity','today activity','yourActivity','activities'];
+        arr.unshift('activity');
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
