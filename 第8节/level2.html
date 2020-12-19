@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*function sayInfo(age) {
+            console.log("name:" + this.name)
+            console.log("age:" + age)
+            var call2 = function(user){
+            }
+            }
+        var user = {
+            name: "zzx"
+        }
+        sayInfo.call2(user, 100)
+            //name:zzx
+            //age:100
+        */
+        var sayInfo = {
+            call2:function(name,age){
+            console.log("name:" + name);
+            console.log("age:" + age);
+           }
+       }
+       var user = {
+            name: "zzx"
+        }
+       sayInfo.call2(user.name, 100);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
