@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" /> 
+</head>
+<body>
+    <script src="./index.js"></script>
+    <div class="header">
+        <span class="logo"><img src="logo.png"></span>
+        <span class="prev" title="后退"> &lt; </span>
+        <span class="next" title="前进"> &gt; </span>
+        <span class="sousuo">
+            <input type="image" src="bottom.png" class="bottom">
+            <input type="text" name="搜索" placeholder="搜索" class="text" id="search">
+            <ul class="list" id="list">
+                <li class="list-title">热搜榜</li>
+                <ul class="list-items"></ul>
+            </ul>
+            <ul class="list" id="rec_search">
+                <li class="list-title-top"></li>
+                <li class="list-title1" id="list-title1"></li>
+                <ul class="list-items"></ul>
+                <li class="list-title2" id="list-title2"></li>
+                <ul class="list-items2"></ul>
+                <li class="list-title3" id="list-title3"></li>
+                <ul class="list-items3"></ul>
+                <li class="list-title4" id="list-title4"></li>
+                <ul class="list-items4"></ul>
+            </ul>
+        </span>
+        <ul class="header-tubiao">
+            <li class="close" title="关闭" onclick="show()">X</li>
+            <li class="shrink"><img src="shrink.png" title="向下还原"></li>
+            <li class="min" title="最小化"> — </li>
+            <li class="mini"><img src="mini.png" title="mini模式（Ctrl + M）"></li>
+            <li class="message"><img src="message.png"></li>
+            <li class="cloth"><img src="cloth.png"></li>
+            <li class="setting"><img src="setting.png" title="设置"></li>
+            <li class="vip">开通VIP</li>
+            <li class="login" id="login">
+                <span ><img class="my_via" id="my_via" src="via0.jpg"></span>
+                <span class="my_name">未登录</span>
+            </li>
+        </ul>
+    </div>
+    <div class="loginwin" id="loginwin">
+        <span class="login_close" id="login_close"><img src="close1.png" title="关闭窗体"></span>
+        <div class="loginwin_center">
+            <select name="" id="prefix" class="prefix">
+                <option value="">+86</option>
+                <option value="">+865</option>
+                <option value="">+867</option>
+            </select>
+            <input type="tel" id="telphone" class="telphone" placeholder="请输入手机号">
+            <input type="password" id="pw" class="pw" placeholder="请输入密码"><br>
+            <div class="cb"><input type="checkbox" >自动登录</div>
+            <button class="login_buttom" id="login_buttom">登录</button>
+        </div>
+    </div>
+    <div id="closereminder" class="closereminder">
+        <div id="title" class="closereminder-title">关闭提示
+            <span><a href="#" id="closebuttom" class="close1"><img src="close1.png" title="关闭窗体"
+                        onclick="hide()"></a></span>
+        </div>
+        <div class="close-content">
+            <input type="radio" name="choose">最小化到系统托盘<br>
+            <input type="radio" name="choose" checked>退出网易云音乐<br>
+        </div>
+        <div class="reminder-bottom">
+            <span><input type="checkbox">不再提醒</span>
+            <button onclick="close()">确定</button>
+        </div>
+    </div>
+    <!--页面的大div包含侧栏一个div，内容一个div-->
+    <div class="main">
+        <div class="celan">
+            <ul>
+                <li class="first">发现音乐</li>
+                <li>视频</li>
+                <li>朋友</li>
+                <li>直播</li>
+                <li>私人FM</li>
+                <li class="special">我的音乐</li>
+                <li><img src="music.png"> 本地音乐</li>
+                <li><img src="down.png"> 下载管理</li>
+                <li class="creat"><span class="special" onclick="show_hidden()">创建的歌单</span><span>+</span>
+                <li class="show-content" id="show-content">我喜欢的音乐</li>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="nav">
+                <span class="first">个性推荐</span>
+                <span>歌单</span>
+                <span>主播电台</span>
+                <span>排行榜</span>
+                <span>歌手</span>
+                <span>最新歌曲</span>
+            </div>
+            <div class="down">
+                <div class="lunbotu" id="lunbotu" onmouseover="show1()" onmouseout="hidden1()">
+                    <span class="prev1" id="prev1"> &lt; </span>
+                    <span class="next1" id="next1"> &gt; </span>
+                    <ul class="photo" id="photo">
+                        <li class="a1"><img src="photo1.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo2.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo3.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo4.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo5.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo6.jpg">
+                            <span class="title1">独家转向</span>
+                        </li>
+                        <li class="a1"><img src="photo7.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo8.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo9.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <li class="a1"><img src="photo10.jpg">
+                            <span class="title1">独家</span>
+                        </li>
+                        <!-- <li><img src="photo1.jpg"> </li> -->
+                    </ul>
+                    <ul class="point" id="point">
+                        <li class="current"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="music">
+                    <h4 class="sub-title1">推荐歌单></h4>
+                    <div class="specify specify1">
+                        <span>
+                            <img src="cover1.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">每日推荐</p>
+                        </span>
+                        <span>
+                            <img src="cover2.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单2</p>
+                        </span>
+                        <span>
+                            <img src="cover3.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单3</p>
+                        </span>
+                        <span>
+                            <img src="cover4.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单4</p>
+                        </span>
+                        <span>
+                            <img src="cover5.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单5</p>
+                        </span>
+                        <span>
+                            <img src="cover6.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单6</p>
+                        </span>
+                        <span>
+                            <img src="cover7.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单7</p>
+                        </span>
+                        <span>
+                            <img src="cover8.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单8</p>
+                        </span>
+                        <span>
+                            <img src="cover9.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单9</p>
+                        </span>
+                        <span>
+                            <img src="cover10.jpg" alt="">
+                            <img src="bofang1.jpg" alt="" class="bofang">
+                            <p class="p1">歌单10</p>
+                        </span>
+                    </div>
+                    <h4 class="sub-title">独家放送></h4>
+                    <div class="specify specify2">
+                        <span>
+                            <img src="cover1.jpg" alt="">
+                            <img src="bofang2.jpg" alt="" class="bofang bofang2">
+                            <p class="p1">每日推荐</p>
+                        </span>
+                        <span>
+                            <img src="cover2.jpg" alt="">
+                            <img src="bofang2.jpg" alt="" class="bofang bofang2">
+                            <p class="p1">每日推荐</p>
+                        </span>
+                        <span>
+                            <img src="cover3.jpg" alt="">
+                            <img src="bofang2.jpg" alt="" class="bofang bofang2">
+                            <p class="p1">每日推荐</p>
+                        </span>
+                    </div>
+                    <h4 class="sub-title">最新音乐></h4>
+                    <div class="specify specify3">
+                        <ul class="new1">
+                            <li>
+                                <div>
+                                    <img src="2cover1.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover1.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover1.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover1.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="new2">
+                            <li>
+                                <div>
+                                    <img src="2cover2.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover2.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover2.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover2.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="new3">
+                            <li>
+                                <div>
+                                    <img src="2cover3.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover3.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover3.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="2cover3.jpg" alt="">
+                                    <img src="bofang1.jpg" alt="" class="bofang">
+                                </div>
+                                <div>
+                                    <p class="p1">曲名</p>
+                                    <p class="p1 p2">歌手</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="sub-title">推荐MV></h4>
+                    <div class="specify specify4">
+                        <span>
+                            <img src="3cover1.jpg" alt="">
+                            <p class="p1">标题</p>
+                            <p class="p1 p2">作者</p>
+                        </span>
+                        <span>
+                            <img src="3cover2.jpg" alt="">
+                            <p class="p1">标题</p>
+                            <p class="p1 p2">作者</p>
+                        </span>
+                        <span>
+                            <img src="3cover3.jpg" alt="">
+                            <p class="p1">标题</p>
+                            <p class="p1 p2">作者</p>
+                        </span>
+                        <span>
+                            <img src="3cover4.jpg" alt="">
+                            <p class="p1">标题</p>
+                            <p class="p1 p2">作者</p>
+                        </span>
+                    </div>
+                    <h4 class="sub-title">主播电台></h4>
+                    <div class="specify specify5">
+                        <span>
+                            <img src="4cover1.jpg" alt="">
+                            <p class="special">主播名</p>
+                            <p class="p1">主题</p>
+                        </span>
+                        <span>
+                            <img src="4cover1.jpg" alt="">
+                            <p class="special">主播名</p>
+                            <p class="p1">主题</p>
+                        </span>
+                        <span>
+                            <img src="4cover1.jpg" alt="">
+                            <p class="special">主播名</p>
+                            <p class="p1">主题</p>
+                        </span>
+                        <span>
+                            <img src="4cover1.jpg" alt="">
+                            <p class="special">主播名</p>
+                            <p class="p1">主题</p>
+                        </span>
+                        <span>
+                            <img src="4cover1.jpg" alt="">
+                            <p class="special">主播名</p>
+                            <p class="p1">主题</p>
+                        </span>
+                        <span>
+                            <img src="4cover1.jpg" alt="">
+                            <p class="special">主播名</p>
+                            <p class="p1">主题</p>
+                        </span>
+                    </div>
+                    <h4 class="sub-title">听听></h4>
+                    <div class="specify specify6">
+                        <span>
+                            <img src="5cover1.jpg" alt="">
+                            <span class="title">全能唱将</span>
+                            <p class="p1">标题</p>
+                            <p class="via p2"><img src="via1.jpg" alt="头像">名字</p>
+                        </span>
+                        <span>
+                            <img src="5cover1.jpg" alt="">
+                            <span class="title">声控天堂</span>
+                            <p class="p1">标题</p>
+                            <p class="via p2"><img src="via2.jpg" alt="头像">名字</p>
+                        </span>
+                        <span>
+                            <img src="5cover1.jpg" alt="">
+                            <span class="title">超强低音</span>
+                            <p class="p1">标题</p>
+                            <p class="via p2"><img src="via3.jpg" alt="头像">名字</p>
+                        </span>
+                        <span>
+                            <img src="5cover1.jpg" alt="">
+                            <span class="title">声控</span>
+                            <p class="p1">标题</p>
+                            <p class="via p2"><img src="via1.jpg" alt="头像">名字</p>
+                        </span>
+                        <span>
+                            <img src="5cover1.jpg" alt="">
+                            <span class="title">全能唱将</span>
+                            <p class="p1">标题</p>
+                            <p class="via p2"><img src="via2.jpg" alt="头像">名字</p>
+                        </span>
+                    </div>
+                    <h4 class="sub-title">看看></h4>
+                    <div class="specify specify6 specify7">
+                        <span>
+                            <img src="6cover1.jpg" alt="">
+                            <p class="via p2 special"><img src="via1.jpg" alt="头像">名字</p>
+                            <p class="p1">标题</p>
+                        </span>
+                        <span>
+                            <img src="6cover2.jpg" alt="">
+                            <p class="via p2 special"><img src="via2.jpg" alt="头像">名字</p>
+                            <span class="title">聊愈</span>
+                            <p class="p1">标题</p>
+                        </span>
+                        <span>
+                            <img src="6cover3.jpg" alt="">
+                            <p class="via p2 special"><img src="via3.jpg" alt="头像">名字</p>
+                            <span class="title">全能男神</span>
+                            <p class="p1">标题</p>
+                        </span>
+                        <span>
+                            <img src="6cover4.jpg" alt="">
+                            <p class="via p2 special"><img src="via2.jpg" alt="头像">名字</p>
+                            <p class="p1">标题</p>
+                        </span>
+                        <span>
+                            <img src="6cover1.jpg" alt="">
+                            <p class="via p2 special"><img src="via1.jpg" alt="头像">名字</p>
+                            <p class="p1">标题</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
