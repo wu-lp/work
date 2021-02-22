@@ -283,11 +283,17 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
         display:none;
         box-shadow: 3px 5px 15px #888888;
     }
 
+    .login_title{
+        position: relative;
+        top: 60px;
+        left: 85px;
+    }
     .loginwin_center{
         position: absolute;
         top: 50%;
@@ -398,7 +404,7 @@
         background-color: #f6f6f7;
     }
 
-    .main-content {
+    .main_content {
         position: relative;
         border-left: 1px solid #e1e1e1;
         flex: 1;
@@ -562,7 +568,7 @@
         border: none;
         position: absolute;
         left: 170px;
-        top: 170px;
+        top: 95px;
     }
 
     .specify .p1 {
@@ -579,6 +585,7 @@
         color: #9f9f9f;
         font-size: 13px;
     }
+
 
     .sub-title {
         margin-top: 20px;

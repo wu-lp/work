@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>index</title>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css" /> 
+    <link rel="stylesheet" type="text/css" href="./index.css" /> 
 </head>
 <body>
     <script src="./index.js"></script>
     <div class="header">
         <span class="logo"><img src="logo.png"></span>
-        <span class="prev" title="后退"> &lt; </span>
+        <span class="prev" title="后退" id="prev"> &lt; </span>
         <span class="next" title="前进"> &gt; </span>
         <span class="sousuo">
             <input type="image" src="bottom.png" class="bottom">
@@ -49,6 +49,7 @@
         </ul>
     </div>
     <div class="loginwin" id="loginwin">
+        <h1 class="login_title">手机登录</h1>
         <span class="login_close" id="login_close"><img src="close1.png" title="关闭窗体"></span>
         <div class="loginwin_center">
             <select name="" id="prefix" class="prefix">
@@ -93,7 +94,7 @@
                 </li>
             </ul>
         </div>
-        <div class="main-content">
+        <div class="main_content" id="main-content">
             <div class="nav">
                 <span class="first">个性推荐</span>
                 <span>歌单</span>

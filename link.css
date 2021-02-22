@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+.xqy{
+    padding-left: 20px;
+}
+
+.top{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.l_cover{
+    margin-right: 5px;
+}
+
+.l_cover img{
+    width: 185px;
+    height: 185px;
+    border-radius: 5px;
+}
+
+.r_introduce>div{
+    margin-bottom: 5px;
+}
+
+.type{
+    font-size: 15px;
+    color: red;
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid red;
+}
+
+.lists_name{
+    font-size: medium;
+    font-weight: 900;
+}
+
+.creater_via img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    top: 7px;
+}
+
+.creater_name{
+    font-size: 15px;
+    color: #a2d3f7;
+}
+
+.birthday{
+    font-size: 15px;
+    color: gray;
+}
+
+.buttom_red{
+    background: #ec4141;
+    width: 140px;
+    height: 30px;
+    color:white;
+    font-size: 15px;
+    border-radius: 25px;
+    padding: 5px 10px 5px 10px;
+}
+
+.buttom_gray{
+    font-size: 15px;
+    border-radius: 25px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid gray;
+    color: gray;
+}
+
+.tag{
+    font-size: 15px;
+    color: gray;
+}
+
+.specify_lable{
+    color: #a2d3f7;
+    font-size: 15px;
+}
+
+.firstline{
+    display: inline-block;
+}
+
+.change{
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 900;
+    position: relative;
+    left: 100%;
+    cursor: pointer;
+}
+
+.hiddentext{
+    display: none;
+}
+
+.hiddentext>p{
+    margin-top: 35px;
+}
+
+.link_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.blocks>span{
+    margin-left: 30px;
+    font-size: 16px;
+    color: #3f4141;
+    cursor: pointer;
+}
+
+.blocks>span:hover{
+    color: #000;
+}
+
+.songslist_title{
+    font-weight: 900;
+    border-bottom: 3px solid #ec4141;
+}
+
+.search_box{
+    height: 30px;
+    width: 200px;
+    background: #f7f7f7;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    padding-left: 15px;
+}
+
+.search_buttom{
+    position: relative;
+    top: 10px;
+    left: -25px;
+    outline: none;
+}
+
+.content{
+    display: flex;
+}
+
+.list1{
+    width: 800px;
+    margin-left: 100px;
+}
+
+.list2{
+    width: 380px;
+}
+
+.list3{
+    width: 520px;
+}
+
+.list4{
+    width: 210px;
+}
+
+.songname img{
+    width: 25px;
+    height: 15px;
+}
+
+.even{
+    background-color: #f9f9f9;
+}
+
+.order{
+    position: relative;
+    left: -20px;
+}
+
+ul li{
+    height: 25px;
+    line-height: 25px;
+}

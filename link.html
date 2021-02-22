@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="link.css" /> 
+</head>
+<body>
+    <script src="./link.js"></script>
+    <div class="xqy">
+        <div class="top">
+            <div class="l_cover">
+                <img src="cover1.jpg" class="cover" id="cover">
+            </div>
+            <div class="r_introduce">
+                <div class="line1">
+                    <span class="type">歌单</span>
+                    <span class="lists_name">歌单名：下一站地球</span>
+                </div>
+                <div class="line2">
+                    <span class="creater_via"><img src="via3.jpg" alt=""></span>
+                    <span class="creater_name">Nicky</span>
+                    <span class="birthday">2021-02-05</span>
+                </div>
+                <div class="line3">
+                    <span class="buttom_red">播放全部</span>
+                    <span class="buttom_gray">收藏（1万）</span>
+                    <span class="buttom_gray">分享（95）</span>
+                    <span class="buttom_gray">下载全部</span>
+                </div>
+                <div class="line4">
+                    <span class="tag">标签：</span>
+                    <span class="specify_lable">欧美/电子/流行</span>
+                </div>
+                <div class="line5">
+                    <span class="tag">歌曲：</span><span class="tag songs_sum">53</span>
+                    <span class="tag">播放：</span><span class="tag play_num">108万</span>
+                </div>
+                <div class="line6">
+                    <span class="tag">简介:</span>
+                    <p class="tag firstline">第一行，固定显示</p>
+                    <div class="hiddentext tag" id="hiddentext">
+                        <p>第二行</p>
+                        <p>第三行</p>
+                        <p>也许没有的第四行</p>
+                    </div>
+                    <span class=" tag change" id="show">展开</span>
+                </div>
+            </div>
+        </div>
+        <div class="under">
+            <div class="link_header">
+                <div class="blocks">
+                    <span class="songslist_title">歌曲列表</span>
+                    <span class="comment_title">评论（14）</span>
+                    <span class="collecter_title">收藏者</span>
+                </div>
+                <div class="search">
+                    <input type="text" class="search_box" id="search_box" name="搜索" placeholder="搜索歌单音乐" >
+                    <input type="image" src="link_search.jpg" class="search_buttom">
+                </div>
+            </div>
+            <div class="content">
+                <ul class="list1">
+                    <li class="tag">音乐标题</li>
+                    <ul class="songname">
+                        <li order="0" class="even">
+                            <span class="tag order">01</span>
+                            <span class="tag">Intro</span>
+                        </li>
+                        <li order="1">
+                            <span class="tag order">02</span>
+                            <span class="tag">The Bird</span>
+                            <span><img src="./mini.png" alt=""></span>
+                        </li>
+                        <li order="2" class="even">
+                            <span class="tag order">03</span>
+                            <span class="tag">Bright</span>
+                            <span><img src="./mini.png" alt="">
+                                <img src="./min.png" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="list2">
+                    <li class="tag">歌手</li>
+                    <ul class="singer">
+                        <li class="tag even" order="0">Amp Fiddler</li>
+                        <li class="tag" order="1">Anderson .Paak</li>
+                        <li class="tag even" order="2">Kehlani</li>
+                    </ul>
+                </ul>
+                <ul class="list3">
+                    <li class="tag">专辑</li>
+                    <ul class="album">
+                        <li class="tag even" order="0">Kehlani</li>
+                        <li class="tag" order="1">Anderson .Paak</li>
+                        <li class="tag even" order="2">Amp Fiddler</li>
+                    </ul>
+                </ul>
+                <ul class="list4">
+                    <li class="tag">时长</li>
+                    <ul class="time">
+                        <li class="tag even" order="0">01:10</li>
+                        <li class="tag" order="1">03:37</li>
+                        <li class="tag even" order="2">03:24</li>
+                    </ul>
+                </ul>
+            </div>    
+        </div>
+    </div>
+
+</body>
+</html>

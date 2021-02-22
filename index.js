@@ -1,5 +1,5 @@
 
-Baseurl = 'http://localhost:3000'
+Baseurl = 'http://sandyz.ink:3000'
 
 
 function show() {
@@ -309,14 +309,32 @@ window.onload = function () {
                 var n = rec[i].playCount;
                 var n = parseInt(n / 10000);
                 recom += '<span>' +
-                    '<img src="' + rec[i].picUrl + '">' +
+                    '<img src="' + rec[i].picUrl + '" class="box'+i+'">' +
                     '<span class="up">' + n + '万' + '</span>' +
                     '<p class="p1">' + rec[i].name + '</p>' +
                     '</span>'
             }
             $('.specify1').html(recom);
+            var cover_box=document.getElementsByClassName('specify1')[0].children;
+            console.log(cover_box);
+            for(var i=0;i<cover_box.length;i++){
+                cover_box[i].setAttribute('id',rec[i].id);
+                cover_box[i].onclick=function(){
+                // 点击歌单封面获取id号
+                    id=this.id;
+                    console.log(id);
+                    id='link.html?id='+id;
+                // 跳转页面
+                    $(".main_content").load('./link.html'); 
+                    document.getElementById('prev').style.background="#d93b3b";
+                }
+            }
         }
     })
+    // 点击prev转到上一页
+    document.getElementById('prev').onclick=function(){
+        window.history.go(-1);
+    }
     // 独家放送
     $.ajax({
         type: 'get',
@@ -352,7 +370,10 @@ window.onload = function () {
             for (var i = 0; i < newmusic.length; i++) {
                 if (i < 4) {
                     new_music1 += '<li>' +
-                        '<div>' + '<img src="' + newmusic[i].picUrl + '">' + '</div>' +
+                        '<div>' + 
+                        '<img src="' + newmusic[i].picUrl + '">' + 
+                        '<img src="bofang1.jpg" class="bofang">'+
+                        '</div>' +
                         '<div>' + '<p class="p1">' + newmusic[i].name +
                         '<span class="p2 toremove' + i + '">' + '(' + newmusic[i].song.alias[0] + ')' + '</span>' +
                         '</p>' +
@@ -362,7 +383,10 @@ window.onload = function () {
                 }
                 if (i > 3 && i < 8) {
                     new_music2 += '<li>' +
-                        '<div>' + '<img src="' + newmusic[i].picUrl + '">' + '</div>' +
+                    '<div>' + 
+                    '<img src="' + newmusic[i].picUrl + '">' + 
+                    '<img src="bofang1.jpg" class="bofang">'+
+                    '</div>' +
                         '<div>' + '<p class="p1">' + newmusic[i].name +
                         '<span class="p2 toremove' + i + '">' + '(' + newmusic[i].song.alias[0] + ')' + '</span>' +
                         '</p>' +
@@ -372,7 +396,10 @@ window.onload = function () {
                 }
                 if (i > 7) {
                     new_music3 += '<li>' +
-                        '<div>' + '<img src="' + newmusic[i].picUrl + '">' + '</div>' +
+                    '<div>' + 
+                    '<img src="' + newmusic[i].picUrl + '">' + 
+                    '<img src="bofang1.jpg" class="bofang">'+
+                    '</div>' +
                         '<div>' + '<p class="p1">' + newmusic[i].name +
                         '<span class="p2 toremove' + i + '">' + '(' + newmusic[i].song.alias[0] + ')' + '</span>' +
                         '</p>' +
